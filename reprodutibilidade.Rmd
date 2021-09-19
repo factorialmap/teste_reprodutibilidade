@@ -1,0 +1,49 @@
+---
+title: "Reprodutibilidade"
+author: "Marcelo"
+date: "19/09/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE)
+```
+
+
+- Quero fazer representações matemáticas
+$E=mc^2$
+
+- dimensionamento de amostra com variavel nominal ou ordinal e populacao finita
+
+$n= \frac{z^2 p.q.N} {d^2(N-1).z^2.p.q}$
+
+- Reproduzir experimento de Fisher
+
+```{r}
+library(tidyverse)
+
+FactoMineR::PCA(iris, 
+                scale.unit = TRUE,
+                quali.sup = 5,
+                graph = FALSE) %>% 
+  factoextra::fviz_pca_biplot(geom.ind = "point",
+                              pointsize =2,
+                              pointshape = 21,
+                              fill.ind = iris$Species,
+                              palette = "lancet",
+                              addEllipses = TRUE)
+
+```
+
+
+- Quero uma tabela simples
+
+feijão|laranja|maça
+-|-|-
+12|34|98
+21|19|32
+
+
+
+
+
